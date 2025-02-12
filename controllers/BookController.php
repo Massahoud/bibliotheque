@@ -10,7 +10,7 @@ class LivreController {
 
     public function index() {
         $livres = $this->livreModel->getAllLivres();
-        include __DIR__ . '/../views/books/liste.php';
+        include __DIR__ . '/../TableauBoard.php';
     }
 
     public function show($id) {

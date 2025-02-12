@@ -34,7 +34,6 @@ $query = $pdo->prepare("
 $query->execute([$user_id, date('Y-m-d')]);
 $abonnement_actuel = $query->fetch();
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -42,31 +41,54 @@ $abonnement_actuel = $query->fetch();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gestion des Abonnements</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .hero {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3>Bienvenue, <strong><?= htmlspecialchars($user_nom) ?></strong> 👋</h3>
-        <a href="logout.php" class="btn btn-danger">Déconnexion</a>
+    <div class="hero mb-4">
+        <h1>Bienvenue, <strong><?= htmlspecialchars($user_nom) ?></strong> 👋</h1>
+        <p>Gérez facilement votre abonnement et profitez de nos services.</p>
     </div>
 
-    <h2 class="text-center">Choisissez un Abonnement</h2>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Choisissez un Abonnement</h2>
+        <a href="logout.php" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+    </div>
 
     <?php if ($abonnement_actuel): ?>
         <div class="alert alert-success text-center">
-            Vous êtes actuellement abonné à <strong><?= htmlspecialchars($abonnement_actuel['nom']) ?></strong> 
+            <i class="fas fa-check-circle"></i> Vous êtes actuellement abonné à <strong><?= htmlspecialchars($abonnement_actuel['nom']) ?></strong> 
             jusqu'au <strong><?= date('d/m/Y', strtotime($abonnement_actuel['date_fin'])) ?></strong>.
         </div>
     <?php else: ?>
         <div class="alert alert-danger text-center">
-            Vous n'avez pas d'abonnement actif.
+            <i class="fas fa-exclamation-triangle"></i> Vous n'avez pas d'abonnement actif.
         </div>
     <?php endif; ?>
 
     <div class="row">
         <?php foreach ($abonnements as $abo): ?>
             <div class="col-md-4">
-                <div class="card text-center">
+                <div class="card text-center shadow-lg">
                     <div class="card-header bg-primary text-white">
                         <h4><?= htmlspecialchars($abo['nom']) ?></h4>
                     </div>
@@ -77,7 +99,7 @@ $abonnement_actuel = $query->fetch();
                         <form action="souscription.php" method="POST">
                             <input type="hidden" name="user_id" value="<?= $user_id ?>">
                             <input type="hidden" name="abonnement_id" value="<?= $abo['id'] ?>">
-                            <button type="submit" class="btn btn-success">S'abonner</button>
+                            <button type="submit" class="btn btn-success"><i class="fas fa-credit-card"></i> S'abonner</button>
                         </form>
                     </div>
                 </div>

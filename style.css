@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/images/image.jpg) no-repeat center / cover;
+    height: 100vh;
+}
+
+header{
+    position: relative;
+    z-index: 100;
+}
+
+header nav{
+    background-color: rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px);
+}
+
+nav{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #33333300;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a{
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 2px 0;
+}
+
+.nav-links a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width: 100%;
+}
+
+.search-box {
+    padding: 0.5rem 0;
+    border-bottom: 2px solid #fff;
+}
+
+.search-box input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.search-box input::placeholder {
+    color: #fff;
+}
+
+.search-box i {
+    color: #fff;
+    cursor: pointer;
+}
+
+main.container {
+    position: relative;
+    min-height: 100vh;
+    min-width: 1300px;
+    margin: auto;
+    display: flex;
+    padding: 2rem;
+    padding-top: 100px;
+    padding-left: 90px
+}
+
+.container-left,
+.container-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container-left .content {
+    max-width: 500px;
+    display: grid;
+    gap: 1rem;
+}
+
+.content h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    color: #f3f4f6;
+    font-weight: 700;
+}
+.content p{
+    color: #f3f4f6;
+}
+
+.btns{
+    display: flex;
+    gap: 1rem;
+}
+
+.btns button {
+    padding: 0.5rem 2rem;
+    color: #f3f4f6;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid #f3f4f6;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.read-more{
+    background-color: #f3f4f6;
+    color: #333333;
+}
+ button.our-blogs:hover{
+    background-color: #ffffff33;
+ }
+
+ 
+ .container-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  
+    color: #f3f4f6;
+}
+
+.container-right form {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 30px 25px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.container-right h4 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.form-group input::placeholder {
+    color: #d1d1d1;
+}
+
+.form-group input:focus {
+    outline: none;
+    border: 1px solid #ffa500;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.submit-travel {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6600;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-travel:hover {
+    background-color: #e65c00;
+}
+.switch-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.switch-text span {
+    color: #ffa500;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.switch-text span:hover {
+    color: #e65c00;
+}

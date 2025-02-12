@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['message'] = "Erreur lors de la souscription.";
     }
 
-    header("Location: abonnement.php");
+    header("Location: ../dashboard_user.php");
     exit();
 }
 ?>

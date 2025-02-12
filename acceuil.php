@@ -10,7 +10,7 @@
     <header>
         <nav>
             <div class="nav-logo">
-                <a href="#">Baim.Travel</a>
+                <a href="#">Bibliotheque du BURKINA</a>
             </div>
             <ul class="nav-links">
                 <li><a href="#">Home</a> </li>
